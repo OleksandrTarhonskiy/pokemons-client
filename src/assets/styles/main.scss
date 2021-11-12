@@ -1,0 +1,69 @@
+@import '_variables.scss';
+
+body {
+  background-color: $color-background;
+  color: $color-black;
+}
+
+.navbar {
+  background-color: $color-red;
+
+  & img {
+    width: 150px;
+    padding: 0.5rem 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+
+  & .pokemon-card {
+    background-color: $color-white;
+    max-height: 300px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+  
+    & img {
+      width: 90px;
+    }
+
+    &:hover {
+      border: 2px solid $color-red;
+
+      & img {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.error-layout, .loading-layout {
+  height: calc(100vh - 10rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 5rem;
+  animation: spin 1s linear infinite;
+
+  @-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+  }
+  @-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+  }
+  @keyframes spin { 
+    100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+    } 
+  }
+}
