@@ -3,7 +3,7 @@ clone repository
 
 cd to project folder
 
-create .env (you can copypaste .env.dist, add your github username)
+create .env (copypaste .env.dist)
 
 yarn install
 
