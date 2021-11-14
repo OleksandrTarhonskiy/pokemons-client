@@ -14,4 +14,3 @@ export const fetchPokemons = (offset: number | string) => async(dispatch: Dispat
     dispatch({ type: ActionTypes.FETCH_POKEMONS_ERROR, payload: (e as Error).message });
   }
 };
-
