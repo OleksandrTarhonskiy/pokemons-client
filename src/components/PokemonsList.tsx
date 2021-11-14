@@ -12,7 +12,6 @@ const PokemonsList: React.FC = () => {
   const dispatch = useDispatch();
   const [hasMore, setHasMore] = useState(false);
   const { loading, error, data, next } = useTypedSelector((state) => state.pokemons);
-
   const handleScroll = () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       setHasMore(true);
@@ -21,7 +20,7 @@ const PokemonsList: React.FC = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchPokemons(0));
+    if (!data.length) dispatch(fetchPokemons(0));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
